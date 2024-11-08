@@ -23,6 +23,7 @@ jobs:
       matrix:
         xcode: ['16.1']
         # macos: ['macos-14']
+        ios: ['ios-16']
         scheme: ['argus-ingress-ios']
         command: ['test']
         platform: ['iOS',]
@@ -31,7 +32,7 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
         xcode-version: ${{ matrix.xcode }}
-    - name: Double-check macOS version (${{ matrix.macos }})
+    - name: Double-check iOS version (${{ matrix.ios }})
       run: sw_vers
     - name: Code Checkout
       uses: actions/checkout@v2
