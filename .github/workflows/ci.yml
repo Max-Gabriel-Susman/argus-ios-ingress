@@ -2,14 +2,12 @@ name: Build and test all  platforms
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'  # Run at midnight every day
+    - cron: 0 0 * * *
 
 # https://stackoverflow.com/a/72408109/6942800
 concurrency:
@@ -19,7 +17,7 @@ concurrency:
 jobs:
   build_and_test:
     name: ${{ matrix.command }} on  ${{ matrix.platform }} (xcode ${{ matrix.xcode }}, ${{ matrix.macos }})
-    runs-on: ${{ matrix.macos }}
+    runs-on: ${{ matrix.macos }} 
     strategy:
       fail-fast: false
       matrix:
@@ -49,7 +47,7 @@ jobs:
       with:
         platform: ${{ matrix.platform }}
         scheme: ${{ matrix.scheme }}
-        action: ${{ matrix.command }}
+        action: ${{ matrix.command }} 
         code-coverage: true
         verbosity: xcpretty
         upload-logs: always
