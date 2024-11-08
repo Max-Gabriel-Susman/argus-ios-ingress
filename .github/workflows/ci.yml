@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build_and_test:
     name: ${{ matrix.command }} on  ${{ matrix.platform }} (xcode ${{ matrix.xcode }}, ${{ matrix.macos }})
-    runs-on: ${{ matrix.macos }} 
+    runs-on: ${{ matrix.ios }} 
     strategy:
       fail-fast: false
       matrix:
