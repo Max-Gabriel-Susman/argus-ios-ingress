@@ -23,7 +23,7 @@ jobs:
       matrix:
         xcode: ['16.1']
         macos: ['macos-14']
-        scheme: ['Casimir']
+        scheme: ['argus-ingress-ios']
         command: ['test']
         platform: ['macOS', 'iOS', 'tvOS', 'watchOS']
     steps:
