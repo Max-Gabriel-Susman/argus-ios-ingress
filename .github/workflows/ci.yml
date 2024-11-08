@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        xcode: ['16.1']
+        xcode: ['15.2']
         macos: ['macos-14']
         scheme: ['argus-ingress-ios']
         command: ['test']
