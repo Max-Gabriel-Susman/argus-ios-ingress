@@ -28,7 +28,7 @@ jobs:
         platform: ['macOS', 'iOS', 'tvOS', 'watchOS']
     steps:
     - name: Switch xcode to ${{ matrix.xcode }}
-      uses: maxim-lobanov/setup-xcode@v1.5.1
+      uses: maxim-lobanov/setup-xcode@latest
       with:
         xcode-version: ${{ matrix.xcode }}
     - name: Double-check macOS version (${{ matrix.macos }})
