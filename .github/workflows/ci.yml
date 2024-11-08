@@ -16,23 +16,22 @@ concurrency:
 
 jobs:
   build_and_test:
-    name: ${{ matrix.command }} on  ${{ matrix.platform }} (xcode ${{ matrix.xcode }}, ${{ matrix.ios }})
-    runs-on: ${{ matrix.ios }} 
+    name: ${{ matrix.command }} on  ${{ matrix.platform }} (xcode ${{ matrix.xcode }}, ${{ matrix.macos }})
+    runs-on: ${{ matrix.macos }} 
     strategy:
       fail-fast: false
       matrix:
         xcode: ['16.1']
-        # macos: ['macos-14']
-        ios: ['ios-16']
+        macos: ['macos-14']
         scheme: ['argus-ingress-ios']
         command: ['test']
-        platform: ['iOS',]
+        platform: ['macOS', 'iOS', 'tvOS', 'watchOS']
     steps:
     - name: Switch xcode to ${{ matrix.xcode }}
       uses: maxim-lobanov/setup-xcode@v1.6.0
       with:
         xcode-version: ${{ matrix.xcode }}
-    - name: Double-check iOS version (${{ matrix.ios }})
+    - name: Double-check macOS version (${{ matrix.macos }})
       run: sw_vers
     - name: Code Checkout
       uses: actions/checkout@v2
