@@ -21,8 +21,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        xcode: ['14.2']
-        macos: ['macos-12']
+        xcode: ['16.1']
+        macos: ['macos-14']
         scheme: ['Casimir']
         command: ['test']
         platform: ['macOS', 'iOS', 'tvOS', 'watchOS']
